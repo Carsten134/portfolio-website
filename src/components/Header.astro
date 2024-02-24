@@ -1,0 +1,21 @@
+---
+import HeaderLogo from "../components/HeaderLogo.astro"
+import HeaderLink from "../components/HeaderLink.astro"
+---
+
+<html>
+  <div class="flex w-screen h-[57px] justify-center shadow-md sticky top-0">
+    <div class="flex w-[80%] justify-between items-center">
+      <HeaderLogo>
+      </HeaderLogo>
+      <div class="flex w-1/4 justify-between items-center">
+        <HeaderLink to="./">home</HeaderLink>
+        <HeaderLink to="./projects">
+          projects
+        </HeaderLink>
+        <HeaderLink to="./notes">notes</HeaderLink>
+      </div>
+    </div>
+  </div>
+
+</html>
