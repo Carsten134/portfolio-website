@@ -1,6 +1,8 @@
 ---
 import Header from "../components/Header.astro";
 import NavCardProject from "../components/NavCardProject.astro";
+import NavCardNotes from "../components/NavCardNotes.astro";
+import WelcomeMessage from "../components/WelcomeMessage.astro";
 ---
 
 <html lang="en">
@@ -13,8 +15,16 @@ import NavCardProject from "../components/NavCardProject.astro";
   </head>
   <body>
     <Header />
-    <div class="h-screen w-screen flex justify-center items-center">
-      <NavCardProject></NavCardProject>
+    <div
+      class="h-screen w-screen flex justify-center items-center bg-home-background bg-center bg-no-repeat bg-beige-200"
+    >
+      <div class="flex justify-center flex-wrap h-1/2">
+        <WelcomeMessage />
+        <div class="w-[80%] flex justify-around items-center">
+          <NavCardProject class="inline-block" />
+          <NavCardNotes class="inline-block" />
+        </div>
+      </div>
     </div>
   </body>
 </html>

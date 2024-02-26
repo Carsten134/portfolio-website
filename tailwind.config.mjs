@@ -2,7 +2,11 @@
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
-		extend: {},
+		extend: {
+			backgroundImage:{
+				'home-background': "url('/src/assets/background_home.webp')"
+			}
+		},
 		colors:{
 			'theme-orange-500': '#FF5C00',
 			'theme-organe-400': '#FF7A30',
@@ -14,7 +18,8 @@ export default {
 			'theme-gray-500': '#313131',
 			'theme-gray-400': '#4D4D4D',
 			'theme-gray-300': '#7A7A7A',
-			'theme-gray-200': '#EFEFEF'
+			'theme-gray-200': '#EFEFEF',
+			'beige-200': '#F7F7F7',
 		},
 		fontFamily:{
 			'sans': ['Roboto\\ Flex', 'Helvetica'],

@@ -5,7 +5,7 @@ const props = defineProps(["title", "description", "href"]);
 
 <template>
   <div
-    class="group flex justify-center items-center flex-col w-[416px] h-[182px] border-solid border-theme-gray-200 border-[1px] rounded-xl shadow-md card hover:shadow-theme-pink-300 transition-all ease-in-out hover:cursor-pointer"
+    class="group flex justify-center items-center flex-col w-[416px] h-[182px] border-solid border-theme-gray-200 border-[1px] rounded-xl shadow-md card hover:shadow-theme-pink-300 transition-all ease-in-out hover:cursor-pointer bg-[#ffffff]"
     @click="navigate(props.href)"
   >
     <div class="p-3 w-full h-full text-theme-gray-500">
