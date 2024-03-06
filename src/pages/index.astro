@@ -18,9 +18,11 @@ import WelcomeMessage from "../components/WelcomeMessage.astro";
     <div
       class="h-screen w-screen flex justify-center items-center bg-home-background bg-center bg-no-repeat bg-beige-200"
     >
-      <div class="flex justify-center flex-wrap h-1/2">
-        <WelcomeMessage />
-        <div class="w-[80%] flex justify-around items-center">
+      <div class="flex justify-center flex-wrap h-full">
+        <div class="flex justify-center items-center w-full h-[61.8%]">
+          <WelcomeMessage />
+        </div>
+        <div class="w-[80%] flex justify-around h-[31.2%] flex-wrap items-center">
           <NavCardProject class="inline-block" />
           <NavCardNotes class="inline-block" />
         </div>
