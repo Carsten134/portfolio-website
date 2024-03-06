@@ -4,16 +4,16 @@ import HeaderLink from "../components/HeaderLink.astro"
 ---
 
 <html>
-  <div class="flex w-screen h-[57px] justify-center shadow-md top-0 sticky z-0 bg-[#ffffff]">
+  <div class="flex w-screen h-[57px] justify-center shadow-md top-0 sticky z-40 bg-[#ffffff]">
     <div class="flex w-[70%] justify-between items-center">
       <HeaderLogo>
       </HeaderLogo>
-      <div class="flex w-1/4 justify-between items-center md:hidden">
+      <div class="flex w-1/4 justify-between items-center sm:hidden">
         <HeaderLink to="/">home</HeaderLink>
-        <HeaderLink to="./projects">
+        <HeaderLink to="/projectsLanding">
           projects
         </HeaderLink>
-        <HeaderLink to="./notes">notes</HeaderLink>
+        <HeaderLink to="/notesLanding">notes</HeaderLink>
       </div>
     </div>
   </div>
