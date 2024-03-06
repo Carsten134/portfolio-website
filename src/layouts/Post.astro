@@ -4,26 +4,35 @@ const { frontmatter } = Astro.props;
 ---
 
 <html>
-  <Header />
-
-  <div class="flex justify-center w-screen">
-    <div
-      class="w-60% prose prose-h1:font-extrabold prose-gray prose-all:text-theme-gray-500 mt-10 prose-lg prose-p:text-justify"
-    >
-      <span
-        class="text-4xl font-extrabold bg-gradient-to-t from-theme-pink-500 to-theme-orange-500 bg-clip-text text-[#ffffff00] block"
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Home</title>
+  </head>
+  <body>
+    <Header />
+    <div class="flex justify-center w-screen">
+      <div
+        class="w-60% prose prose-h1:font-extrabold prose-gray prose-all:text-theme-gray-500 mt-10 prose-lg prose-p:text-justify"
       >
-        {frontmatter.postTitle}
-      </span>
-      <p>
-        <strong>Topics: {frontmatter.postTopics}</strong> <br>
-        Date: {frontmatter.postDate}
-      </p>
-      <slot />
+        <span
+          class="text-4xl font-extrabold bg-gradient-to-t from-theme-pink-500 to-theme-orange-500 bg-clip-text text-[#ffffff00] block"
+        >
+          {frontmatter.postTitle}
+        </span>
+        <p>
+          <strong>Topics: {frontmatter.postTopics}</strong>
+          <br />
+          Date: {frontmatter.postDate}
+        </p>
+        <slot />
+      </div>
     </div>
-  </div>
-  <style is:global>
-    @import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap");
-    @import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
-  </style>
+  </body>
 </html>
+<style is:global>
+  @import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
+</style>
