@@ -2,6 +2,10 @@
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
+		screens:{
+			sm: {'max': '811px', 'min': '0px'},
+			md: {'min': '811px'}
+		},
 		extend: {
 			backgroundImage:{
 				'home-background': "url('/src/assets/background_home.webp')"
@@ -19,11 +23,14 @@ export default {
 			'theme-gray-400': '#4D4D4D',
 			'theme-gray-300': '#7A7A7A',
 			'theme-gray-200': '#EFEFEF',
+			'theme-beige-200': '#F8F7F3',
+			'theme-beige-300': '#DEDACA',
 			'beige-200': '#F7F7F7',
 		},
 		fontFamily:{
 			'sans': ['Roboto\\ Flex', 'Helvetica'],
-			'mono': ['Fira\\ Mono']
+			'mono': ['Fira\\ Mono'],
+			'display-mono': ['IBM\\ Plex\\ Mono']
 		}
 	},
 	plugins: [require('@tailwindcss/typography')],
