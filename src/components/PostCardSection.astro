@@ -1,0 +1,18 @@
+---
+const { title } = Astro.props;
+---
+
+<html>
+  <div class="flex justify-center w-full items-center rounded-md backdrop-blur-sm border-solid shadow-md border-theme-gray-200 m-4">
+    <div class="w-[90%]">
+      <div class="w-full">
+        <h1 class="text-[48px] py-3 font-sans font-regular">{title}</h1>
+        <hr class="h-[2px] border-none bg-gradient-to-r from-theme-gray-500">
+      </div>
+      <div class="w-full flex flex-wrap justify-between items-center mt-2">
+        <slot></slot>
+      </div>
+    </div>
+    
+  </div>
+</html>
