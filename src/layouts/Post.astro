@@ -9,25 +9,35 @@ const { frontmatter } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Home</title>
+    <title>{ frontmatter.headerTitle }</title>
   </head>
   <body>
     <Header />
     <div class="flex justify-center w-screen">
-      <div
-        class="w-60% prose prose-h1:font-extrabold prose-gray prose-all:text-theme-gray-500 mt-10 prose-lg prose-p:text-justify"
-      >
-        <span
-          class="text-4xl font-extrabold bg-gradient-to-t from-theme-pink-500 to-theme-orange-500 bg-clip-text text-[#ffffff00] block"
-        >
-          {frontmatter.postTitle}
-        </span>
+      <div class="w-auto sm:w-[80%] mb-20">
+        <div class="py-8">
+          <span
+            class="text-5xl font-extrabold bg-gradient-to-t from-theme-pink-500 to-theme-orange-500 bg-clip-text text-[#ffffff00] block"
+          >
+            {frontmatter.postTitle}
+          </span>
+        </div>
+
+        <hr
+          class="mb-4 border-none h-1 bg-gradient-to-r from-theme-pink-500 to-white"
+        />
         <p>
           <strong>Topics: {frontmatter.postTopics}</strong>
           <br />
           Date: {frontmatter.postDate}
+          <br />
+          Tools used: {frontmatter.postTools}
         </p>
-        <slot />
+        <div
+          class="prose prose-stone prose-code:border-3 prose-code:border-solid prose-code:border-black prose-hr:my-2 prose-h1:font-bold prose-all:text-theme-gray-500 mt-10 prose-xl sm:prose-lg prose-p:text-justify prose-img:rounded-md prose-img:shadow-md"
+        >
+          <slot />
+        </div>
       </div>
     </div>
   </body>
