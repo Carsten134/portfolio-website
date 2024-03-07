@@ -8,7 +8,8 @@ export default {
 		},
 		extend: {
 			backgroundImage:{
-				'home-background': "url('/src/assets/background_home.webp')"
+				'home-background': "url('/src/assets/background_home.webp')",
+				'landing': "url('/src/assets/grid_points.jpeg')"
 			}
 		},
 		colors:{
