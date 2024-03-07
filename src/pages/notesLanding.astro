@@ -10,15 +10,15 @@ import PostCardSection from "../components/PostCardSection.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Home</title>
+    <title>Notes</title>
   </head>
   <body>
     <Header />
     <div
-      class="flex justify-center w-screen min-h-[100vh] bg-gradient-to-t from-theme-beige-300 to-theme-beige-200"
+      class="flex justify-center w-screen min-h-[100vh] bg-landing bg-left bg-repeat"
     >
       <div
-        class="md:flex-col justify-center sm: w-[70%] relative mt-10 pb-10 transition-all ease-in-out"
+        class="md:flex-col justify-center w-[70%] relative mt-10 pb-10 transition-all ease-in-out"
       >
         <div
           class="h-[1.2em] w-full text-[60px] sm:tracking-wide sm:text-[40px] text-[#ffffff00] sm:w-auto sm:absolute sm:left-[-180px] sm:top-[210px] sm:rotate-[-90deg] z-10 bg-theme-orange-500 flex justify-center items-center text-3xl transition-all ease-in-out font-display-mono font-light bg-clip-text bg-gradient-to-t from-theme-pink-500 to-theme-orange-500"
@@ -28,7 +28,7 @@ import PostCardSection from "../components/PostCardSection.astro";
         <div
           class="h-[825px] w-full sm:relative sm:top-0 z-20 items-center font-medium text-3xl mt-[-29px] sm:mt-0 sm:w-[90%] left-5 transition-all ease-in-out"
         >
-          <PostCardSection title="test section">
+          <PostCardSection title="Statistical Theory">
             <PostCard
               client:load
               to="/projects/test-post"
