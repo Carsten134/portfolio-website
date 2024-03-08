@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/Post.astro
-postTitle: This Website
+postTitle: This website
 headerTitle: Website
 postDate: 07-03-2024
 postTools: Astro, Tailwind, Figma
@@ -34,7 +34,7 @@ Keeping these core-audiences in mind, i came up with some key decisions. Here ar
 With this project i wanted to plan before i build. So i used Figma to get a feel for the structure and design of the site. It also allowed me to experiment with UI elements without needing to think about the technical details. Figm also encouraged me to devide the page into usefull components beforehand and use prototyping. If you look into the [figma file](https://www.figma.com/file/wa1hqL0V08QNj4ApCAi279/Porfolio-Website?type=design&node-id=0%3A1&mode=design&t=15VC8akG3FDrw6zz-1), you will find structure components, that layout the general div-structure of components with display and positon properties.
 
 ### Typography
-I decided to use a lot of monospace, because of its typical association with `code`. From the headerlogo to the headings in the landingpages of [notes](/notesLanding) and [projects](/projectsLanding) i wanted to find the a right balance between making every coder feel home and not blatantly overdoing it.
+I decided to use a lot of monospace, because of its typical association with `code`. From the headerlogo to the headings in the landingpages of [notes](/portfolio-website/notesLanding) and [projects](/portfolio-website/projectsLanding) i wanted to find the a right balance between making every coder feel right at home and not blatantly overdoing it.
 
 ![Project header](../../assets/Projects/website/projects-header.png)
 
@@ -46,13 +46,40 @@ At first i heavily leaned on the content first approach, inspired by instagram. 
 But after a while i realized, that i could use color to pick up the viewers attention and guide the eye from there. Take the homescreen for example:
 ![Eye guide](../../assets/Projects/website/eyeguide.png)
 
-The vibrant orange and pink demand the viewers attention and the gaussian pdf leads the viewers eye to the navigation cards. Intuitively the viewer knows what this website is about and provides you with navigational options afterwards.
+The vibrant orange and pink demand the viewers attention and the gaussian pdf leads the viewers eye to the navigation cards. Intuitively the viewer knows what this website is about and is provided with navigational options afterwards.
 
 I chose *orange* and *pink*, because orange symbolizes *energy and change*, while pink is typically associated with *creativity and innovation*. Coloruse is consistent throughout the project and is a part of the `tailwind.config.js` file.
 ![Color palate](../../assets/Projects/website/color.png)
 
-### Framework
+### Responsiveness
+The primary device for this website is mobile. Again: My goal is to **remove as much friction as possible from the process of viewing my work**. More eyes on you and your work means more incentive to perform and better career opportunities. I am specifically targeting the 5 minutes, that you have at dinner or lunch, on the bus or even the toiletbreak. And in these 5 minutes, you only have access to the things you always carry with you...your phone.
+
+But on the other hand i have never tried designing for such a narrow screen. Also space is percieved differently on mobile. *Where does the viewer look? Where does give inputs for the website?*
+
+From my own observation the bottom half of the screen usually belongs to input elements, while the upper half is reserved for visual stimulus and feedback. I used this speculation to purposefully place the navigation of the home screen on the bottom half:
+
+![home screen on mobile](../../assets/Projects/website/home-screen-mobile.png) 
+
+Originally i used the *golden ratio* for the split, but i realized, that you have to strech your thumb too far to reach the navigation. So that's why it ended up being a 50/50 split.
+
+### Is this normal? 
+From the way i have designed the homescreen, one of the first things, your eye picks up is the normal distribution. The choice for a normal has not been easy. After all an abstract illustration of a feed forward neural net or some code block would have probably sparked more excitement in the user. So why a simple normal?
+
+![abstract normal](../../assets/background_home.webp)
+
+The more you dive into statistics and data science, the more you get familiar with the concept of random variables. Anything we know from statistics, from simple regressions over test-statistics to large neural nets is in it's very essence the transformation of a random variable. If i want to reduce everything i do down to one singular concept it is a random variable.
+
+So the choice landed on a random variable. But i can't just write down the definition right? From there on the choice of a normal just came very natural. Without going into too much detail, but normals can be found in all kinds of places in statistics. And if you pay close attention in stochastics, you will find, that everything at some point will lead to a normal distribution.
+
+#### Okay, nerd, but what does this mean?
+Elegance. Elegance on a visual, conceptual and functional level. This simple normal has:
+- given the viewer context on the work, which is being performed with one simple plot-line ( *visual* )
+- guided the viewers attention to the next points of interest  ( *functional* )
+- speaks for the ability to break down complex subjects into fundamental patterns and truths ( *conceptual* )
+
+### Web-Framework
 I wanted a site, that would load very quickly, a responsive design and a simple and effective workspace. With Astro and Tailwind i had everything i needed. Astro reduces the javascript footprint and prebuilds the pages at build time, which results in excellent loading times. It also supports markdown files, which makes it very easy to create blog pages.
 
 Tailwind is pretty much the go to for many professional webdevelopers. It is fast, easy to use and reduces the amount of css shipped in the final page, further contributing to loading-speed.
 
+![performance](../../assets/Projects/website/performance.png)
