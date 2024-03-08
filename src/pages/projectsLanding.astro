@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import PostCard from "../components/PostCard.vue";
 import PostCardSection from "../components/PostCardSection.astro";
+import WebsiteHero from "../assets/Projects/website/title-pic.png"
 ---
 
 <html>
@@ -32,7 +33,7 @@ import PostCardSection from "../components/PostCardSection.astro";
             <PostCard
               client:load
               to="/portfolio-website/projects/website-project"
-              imgURL="/portfolio-website/src/assets/Projects/website/title-pic.png"
+              imgURL={WebsiteHero.src}
               title="This Website!"
             />
           </PostCardSection>
