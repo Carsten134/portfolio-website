@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import PostCard from "../components/PostCard.vue";
 import PostCardSection from "../components/PostCardSection.astro";
+import StatTheoryHero from "../assets/mu.png"
 ---
 
 <html>
@@ -32,7 +33,7 @@ import PostCardSection from "../components/PostCardSection.astro";
             <PostCard
               client:load
               to="/portfolio-website/notes/statistical-theory/summary-raw"
-              imgURL="/portfolio-website/src/assets/mu.png"
+              imgURL={StatTheoryHero.src}
               title="Summary"
             />
           </PostCardSection>
