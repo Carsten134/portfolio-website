@@ -2,7 +2,8 @@
 import Header from "../components/Header.astro";
 import PostCard from "../components/PostCard.vue";
 import PostCardSection from "../components/PostCardSection.astro";
-import WebsiteHero from "../assets/Projects/website/title-pic.png"
+import WebsiteHero from "../assets/Projects/website/title-pic.png";
+import ImgNY from "../assets/Projects/new-york-pp/title-pic.webp"
 ---
 
 <html>
@@ -30,6 +31,12 @@ import WebsiteHero from "../assets/Projects/website/title-pic.png"
           class="h-[825px] w-full sm:relative sm:top-0 z-20 items-center font-medium text-3xl mt-[-43px] sm:mt-0 sm:w-[90%] left-5 transition-all ease-in-out"
         >
           <PostCardSection title="Applied Work">
+            <PostCard
+              client:load
+              to="/portfolio-website/projects/new-york-property-prices"
+              imgURL={ImgNY.src}
+              title="NY property prices"
+            />
             <PostCard
               client:load
               to="/portfolio-website/projects/website-project"
