@@ -3,8 +3,9 @@ import Header from "../components/Header.astro";
 import PostCard from "../components/PostCard.vue";
 import PostCardSection from "../components/PostCardSection.astro";
 import WebsiteHero from "../assets/Projects/website/title-pic.png";
-import ImgNY from "../assets/Projects/new-york-pp/title-pic.webp"
-import ImgGrade from "../assets/Projects/grading-analysis/hero.webp"
+import ImgNY from "../assets/Projects/new-york-pp/title-pic.webp";
+import ImgGrade from "../assets/Projects/grading-analysis/hero.webp";
+import StatTheoryHero from "../assets/mu.png"
 ---
 
 <html>
@@ -49,6 +50,14 @@ import ImgGrade from "../assets/Projects/grading-analysis/hero.webp"
               to="/portfolio-website/projects/website-project"
               imgURL={WebsiteHero.src}
               title="This Website!"
+            />
+          </PostCardSection>
+          <PostCardSection title="Theoretical Work">
+            <PostCard
+              client:load
+              to="/portfolio-website/projects/lebesgue-stieltjes-measure"
+              imgURL={StatTheoryHero.src}
+              title="Expected Value Shenanigans"
             />
           </PostCardSection>
         </div>

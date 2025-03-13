@@ -1,0 +1,65 @@
+---
+layout: ../../layouts/Post.astro
+postTitle: Expected Value Shenanigans 
+headerTitle: Expected value
+postDate: 13-03-2025
+postTools: ""
+postTopics: "#statistical-theory"
+---
+
+import Latex from "../../components/Latex.astro";
+
+## Introduction
+This post builds on top of a question, that has been asked in my teaching and I haven't been able to find an answer to for a long time.
+
+It does not add much value, nor is it worth knowing. In it's essence, we will try to find a bridge between measure integrals and Riemann integrals (in the context of statistical theory). And while there is one through a special case, there is no additional intuition we gain from this. After all these are two different approaches to the area under the curve problem. One is just more general than the other.
+
+## Problem Definition
+
+Given a random variable X:
+<Latex formula="X: \Omega\to \R\hspace{1em} X:\mathcal A -\mathcal B \text{ measurable}"></Latex>
+...defined on the following probability space:
+
+<Latex formula="(\Omega, \mathcal A, P),\hspace{1em} P: \mathcal A \to [0,1]"></Latex>
+
+We have learned, that we can compute the theoretical expected value in two ways. One being the measure Integral:
+
+<Latex formula="\int_\Omega XdP" class="not-prose"></Latex>
+
+And the other one being over the Riemann Integral using the random variables pdf:
+
+<Latex formula="\int_\R xf(x)dx"></Latex>
+
+But how do these two concepts relate to each other?
+
+---
+## Deriving the special case
+
+We've learnt, that the measure Integral is a more general case of the Riemann. Consequently there must be a special case of the measure Integral, which is equivalent to the expression of the Riemann. Meaning for every well behaved pdf there has to be a probability measure and a random variable in a specific environment, which yields the same expected value as the expected value using the pdf.
+<Latex formula="\forall f\text{ well behaved pdf}: \exists X_f: \Omega \to \R \text{ and } P_f:\mathcal A \to [0,1]: \\ \int_\R xf(x)dx = \int_\Omega X_fdP_f"></Latex>
+
+
+This special case is provided by the *Lebesgue-Stieltjes-measure* [2]. Which can be derived from *Catatheodory's expansion theormen* [1]. The Lebesgue-Stieltjes-measure is the unique probability measure on the Borel sigma algebra, which behaves like a given cdf F:
+
+<Latex formula="\forall F \text{ well behaved cdf}: \exist P_F: \mathcal B \to [0,1] \text{ for which:}\\\forall a,b\in \R \hspace{1em} a<b: P_F([a,b]) = F(b)-F(a)"></Latex>
+
+By "well behaved" I also mean F being continuous and differentiable such that we can derive the pdf from it. If we now define X to be the identity function, we have our special case.
+
+Summarizing what has been said before, we can say that:
+
+<Latex formula="\text{Let } X \text{ be a random variable and } f_X(x) \text{be its belonging pdf and }F_X(x) \text{ cdf.}\\ \text{Then we can define }\tilde X: \R\to\R, \tilde X(\omega)=\omega \\\text{ and} P_{F_X} \text{ the Lebesgue-Stieltjes measure with respect to }F_X. \\ \text{It then holds that: }\\ \int_\R xf(x)dx = \int_\R \tilde X dP_{F_X}" class="not-prose"></Latex>
+
+This transition from Riemann to measure integral is also refered to as the *Lebesgue-Stieltjes Integral* [3]:
+
+<Latex formula="\int_\R xdF_X(x)"></Latex>
+## Intuition on the special case
+In the more general measure Integral, we have a much more elaborate setup involving a measurable function (random variable) and a probability measure. If our random variable is just defined via it's densities, we don't need these additional layers of complexity. All we need is to scale the probabilities such that they fit the behavior of our cdf.  
+
+---
+
+### References
+[1]  Donald L. Cohn: Measure Theory. Birkhäuser, Boston MA u. a. 1980, ISBN 3-7643-3003-1, Satz 2.1.9.
+
+[2] Jürgen Elstrodt: Maß- und Integrationstheorie. 6. Auflage. Springer, Berlin/Heidelberg/New York 2009, ISBN 978-3-540-89727-9.
+
+[3] [Lebesgue Stieltjes Inetgral](https://en.wikipedia.org/wiki/Lebesgue%E2%80%93Stieltjes_integration)
